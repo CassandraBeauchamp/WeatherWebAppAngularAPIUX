@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/WeatherWebAppSpringBootAngularAPIUX.iml" filepath="$PROJECT_DIR$/.idea/WeatherWebAppSpringBootAngularAPIUX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/WeatherWebAppAngularAPIUX.iml" filepath="$PROJECT_DIR$/.idea/WeatherWebAppAngularAPIUX.iml" />
     </modules>
   </component>
 </project>
