@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {NgIf} from "@angular/common";
+import { ApixuService } from "../apixu.service";
 
 
 @Component({
@@ -16,9 +17,10 @@ import {NgIf} from "@angular/common";
 export class WeatherComponent implements OnInit{
 
   public weatherSearchForm: FormGroup;
+  public weatherData: any;
 
-  constructor(private formBuilder: FormBuilder) {
-    this.weatherSearchForm = formBuilder.group(0);
+  constructor(private formBuilder: FormBuilder, private apixuService: ApixuService) {
+
   }
   ngOnInit() {
     this.weatherSearchForm = this.formBuilder.group({
@@ -26,7 +28,10 @@ export class WeatherComponent implements OnInit{
     });
   }
   sendToAPIXU(formValues: any) {
-    console.log(formValues);
+    this.apixuService
+      .getWeather(formValues.location)
+      .subscribe(data => this.weatherData = data)
+    console.log(this.weatherData);
   }
 }
 
